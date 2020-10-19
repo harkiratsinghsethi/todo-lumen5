@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react';
 import ReactTable from 'react-table';
 import './styles.less'
 import AddToDo from "./AddToDo";
-
+import {filterTodos} from './ToDoHelper'
 
 const ShowTodos = (props) => {
     const [todoData, setTodoData] = useState([])
     const [checked,setCheckBox]=useState(false)
     const todayDate = new Date();
-
+    console.log(JSON.stringify(todoData))
     function fetchTodos() {
         fetch(`/api/fetchTodos?projectid=${props.projectID}`)
             .then(resp =>
@@ -23,7 +23,8 @@ const ShowTodos = (props) => {
 
                 })
             ))
-            .then(response => setTodoData(props.cat ? response.filter(item => item.CATEGORY === props.cat) : response));
+            // .then(response => setTodoData(props.cat ? response.filter(item => item.CATEGORY === props.cat) : response))
+            .then(response => setTodoData(filterTodos(response,props.cat)));
     }
 
     useEffect(() => {
@@ -51,17 +52,13 @@ const ShowTodos = (props) => {
     }
 
     const handleCB = (e, v) => {
-        // setCheckBox(e.target.key)
-        // const cellValue = todoData[v.index][v.column.id];
-
-        console.log(e.target.key)
+        setCheckBox(!checked)
     }
     const renderStateCB = (row) => {
-        console.log(row)
-
         return (
             <label>
                 <input
+                    id = {Math.random()}
                     name="isGoing"
                     type="checkbox"
                     checked={checked}
