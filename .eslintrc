@@ -1,0 +1,33 @@
+//{
+//  "parser": "babel-eslint",
+//  "parserOptions": {
+//    "ecmaVersion": 6,
+//    "sourceType": "module"
+//  },
+//  "env": {
+//    "es6": true,
+//    "node": true,
+//    "browser": true,
+//    "jquery": true,
+//    "mocha": true
+//  },
+//  "extends": "airbnb",
+//  "plugins": ["json"],
+//  "rules": {
+//    "indent": 0,
+//    "max-len": ["error", 250],
+//    "camelcase": [0, "never"],
+//    "react/jsx-indent": 0,
+//    "comma-dangle": ["error", "never"],
+//    "no-unused-vars": ["error", { "varsIgnorePattern": "style|bootstrap" }],
+//    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+//    "object-curly-spacing": [0, "never"],
+//    "react/jsx-indent-props": 0,
+//    "react/jsx-tag-spacing": 0,
+//    "react/forbid-prop-types": 0,
+//    "no-trailing-spaces": 0,
+//    "jsx-a11y/label-has-associated-control": "off",
+//    "jsx-a11y/label-has-for":"off",
+//    "template-curly-spacing" : "off"
+//  }
+//}
