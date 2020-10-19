@@ -1,9 +1,6 @@
 const fs = require('fs');
 
 module.exports = {
-    getExcercise: (req, res) => {
-        res.status(200).send('test');
-    },
     updateLogin: (req, res) => {
         const fileName = '../../../data/users.json';
         const file = require(fileName);
