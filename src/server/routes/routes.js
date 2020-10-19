@@ -4,7 +4,6 @@ const controller = require('../controller/controller.js');
 router = express.Router();
 
 //Projects API
-router.route('/getdata').get(controller.getExcercise);
 router.route('/updateLogin').get(controller.updateLogin);
 router.route('/addProject').get(controller.addProject);
 router.route('/deleteProject').get(controller.deleteProject);
